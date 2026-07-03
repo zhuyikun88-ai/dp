@@ -19,4 +19,20 @@ public class RedisConstants {
     public static final String FEED_KEY = "feed:";
     public static final String SHOP_GEO_KEY = "shop:geo:";
     public static final String USER_SIGN_KEY = "sign:";
+
+    /** Caffeine本地缓存相关 */
+    public static final Long CAFFEINE_SHOP_TTL = 5L;
+
+    /** RocketMQ Topic */
+    public static final String TOPIC_CACHE_INVALIDATION = "cache-invalidation-topic";
+    public static final String TOPIC_SECKILL_ORDER = "seckill-order-topic";
+    public static final String TOPIC_ORDER_TIMEOUT = "order-timeout-topic";
+
+    /** RocketMQ Consumer Group */
+    public static final String CONSUMER_GROUP_CACHE = "cache-invalidation-consumer-group";
+    public static final String CONSUMER_GROUP_SECKILL = "seckill-order-consumer-group";
+    public static final String CONSUMER_GROUP_TIMEOUT = "order-timeout-consumer-group";
+
+    /** 订单超时时间（分钟） */
+    public static final Long ORDER_TIMEOUT_MINUTES = 15L;
 }

@@ -7,11 +7,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/hmdp?useSSL=false&serverTimezone=UTC
     username: root
-    password: 123
-  redis:
-    host: 192.168.150.101
-    port: 6379
     password: 123321
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
     lettuce:
       pool:
         max-active: 10
@@ -22,6 +22,16 @@ spring:
     default-property-inclusion: non_null # JSON处理时忽略非空字段
 mybatis-plus:
   type-aliases-package: com.hmdp.entity # 别名扫描包
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: hmdp-producer-group
+    send-message-timeout: 3000
+    retry-times-when-send-failed: 2
+    max-message-size: 4194304
+  consumer:
+    group: hmdp-consumer-group
+    pull-batch-size: 10
 logging:
   level:
     com.hmdp: debug
